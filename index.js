@@ -39,13 +39,14 @@ function isCollide(snake){
 function gameEngine(){
     //part 1: updating the snake array & food
     if(isCollide(snakeArr)){
+        score = 0;
+        scoreBox.innerHTML = "Score: "+ score;
         gameOverSound.play();
         musicSound.pause();
         inputDir = {x:0, y:0};
         alert("game over! Press any key to play again.");
         snakeArr = [{x:13, y:15}];
-        musicSound.play();
-        score = 0;
+        musicSound.play();   
     }
 
     //if you have eaten the food, increment the score and regenerate the food
